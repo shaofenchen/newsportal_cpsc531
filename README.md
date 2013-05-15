@@ -1,32 +1,30 @@
-Text categorization
+A personal news portal developed for course CPSC531
 ==================
+A website which organize your feeds and categorize feed entries under pre-defined categories automatically, so user can filter what they interested in efficiently
 
-A data mining program doing text categorization for course cpsc531 - Advance database
+This is the User interface, which is backed by the [date mining program]((https://github.com/shaofenchen/datamining_cpsc531)) doing text categorization for course cpsc531 - Advance database
 
-**Under construction**
+**Dependency**
+* Environment: 
+
+  OS: Ubuntu 12.04
+  
+  java jre ~>1.6
+  
+  Ruby ~> 1.9.2
+  
+  Rails ~> 3.2
 
 ***Instruction***
 
-* Install [Wordnet2.1 ~ 3.0](http://wordnet.princeton.edu/wordnet/download/current-version/), depends on your platform.
 
-* Changed the corresponding path of Wordnet dictionary in TextClassification.java
+* Install [Wordnet2.1 ~ 3.0](http://wordnet.princeton.edu/wordnet/download/current-version/), depends on your platform. and place the /dict folder in /lib/java/. I've already extract the  Linux version /dict under /lib/java folder, which have not yet test in windows 
 
-* Updated libraries(the new jar can be found at /newlib for convenience): 
+* Clone the code,
 
-  commons-io-1.2.jar => commons-io-2.4.jar
-    
-  jwi-2.1.3 => edu.mit.jwi_2.2.4.jar
-* Currently the training data set are in src/test/resources/data/articles folders, the structure of this folders should look like this(a 2-tier structure):	
 ```ruby
-	- articles(or whatever you named it)
-		- (folder)category1
-			-  text_file1
-			-  text_file2
-			-  text_file3
-				...
-		- (folder)category2
-				...
-		- (folder)category3
-				...
+
+	bundle install
+	rake db:migrate
+	rake db:seed
 ```
-* Run the main class TextClassification.java
