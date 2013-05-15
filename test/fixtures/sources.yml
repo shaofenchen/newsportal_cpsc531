@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_type: MyString
+  name: MyString
+  source_link: MyString
+  user_id: 1
+  description: MyText
+  category: MyString
+
+two:
+  source_type: MyString
+  name: MyString
+  source_link: MyString
+  user_id: 1
+  description: MyText
+  category: MyString

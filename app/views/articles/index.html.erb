@@ -1,0 +1,65 @@
+<div ng-controller="ArticleCtrl">
+<div class="span3" ng-controller="SourceCtrl">
+	<h2>Sources</h2>
+	<div class="left-component">
+		<form ng-submit="addEntry()">
+			<input type="text" ng-model="newEntry.source_link">
+			<p class="clearfix"><button type="submit" class="btn new-feed-button pull-right">Add new feed</button>
+			</p>
+		</form>
+		<ul class="nav nav-list">
+			<li ng-repeat="source in sources" ng-class="{active: source == activeSource}">
+			<a ng-href="" ng-click="refresh(source)">{{source.name}}</a>
+			</li>
+			<li>
+			<a ng-href="" ng-click="showall()"><b>Show All</b></a>
+			</li>
+		</ul>
+	</div>
+	<hr >
+	<div class="well" style="padding: 8px 0;" ng-controller="CategoryCtrl">
+        <ul class="nav nav-list">
+          <li class="nav-header">Browse by Category</li>
+          <li ng-repeat="category in categories" ng-class="{active: category == activeCategory}" class="category-entry">
+			<a ng-href="" ng-click="refreshCate(category)">{{category.name}}</a>
+		  </li>
+		  <li>
+			<a ng-href="" ng-click="showall()"><b>Show All</b></a>
+		  </li>
+        </ul>
+    </div>
+</div>
+<div class="span1">
+</div>
+<div class="span8">
+	<div>
+	<h2>Recommended articles</h2>
+		<div class='row'>
+			<form class="form-search">
+				<div class="form-actions top-search">
+				<div class="pull-right" style="padding-right: 250px">
+				  <input type="text" ng-model="query">
+				  <button type="submit" class="btn">Search</button>
+				</div>
+				</div>
+			</form>
+		</div>
+		<div class='row'>
+			  <ul>
+				<li ng-repeat="article in articles | filter:query">
+				<a href="/articles/{{article.id}}"><b style="font-size: 18px; margin-bottom: 5px;">{{article.title}}</b></a>
+				<p>from <a href="{{article.source_link}}">{{article.source}}</a> by <i>{{article.author}}</i>
+				<a ng-href="{{article.entry_url}}" class="pull-right" style="padding-right: 50px;"><i class="icon-share"></i>Go to website</a>
+				</p>
+				<p class="clearfix">
+				<div class="label label-inverse category">{{article.category}}</div>
+				</p>
+				<p><div ng-bind-html="{{article.summary}}"></div></p>
+				<hr/>
+				</li>
+			  </ul>
+			<br />
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  source: MyString
+  source_link: MyString
+  category: MyString
+  retrieve_date: 2013-05-13 03:16:53
+  user_id: 1
+
+two:
+  title: MyString
+  source: MyString
+  source_link: MyString
+  category: MyString
+  retrieve_date: 2013-05-13 03:16:53
+  user_id: 1
